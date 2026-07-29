@@ -1,0 +1,41 @@
+---
+import Logo from "./Logo.astro";
+import type { Locale } from "../content/site";
+import { contact, copy } from "../content/site";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = copy[locale];
+const otherPath = locale === "ka" ? "/en/" : "/";
+---
+
+<header class="site-header">
+  <div class="shell nav-inner">
+    <Logo />
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#services">{t.nav.services}</a>
+      <a href="#coverage">{t.nav.coverage}</a>
+      <a href="#process">{t.nav.process}</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="locale-link" href={otherPath} hreflang={locale === "ka" ? "en" : "ka"}>
+        {t.localeName}
+      </a>
+      <a class="button button-small" href={`tel:${contact.phoneHref}`}>
+        {t.nav.call}
+      </a>
+      <details class="mobile-menu">
+        <summary>{t.nav.menu}</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="#services">{t.nav.services}</a>
+          <a href="#coverage">{t.nav.coverage}</a>
+          <a href="#process">{t.nav.process}</a>
+          <a href={otherPath}>{t.localeName}</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+import type { Locale } from "../content/site";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+}
+
+const { locale, title, description } = Astro.props;
+const canonicalPath = locale === "ka" ? "/" : "/en/";
+const canonical = new URL(canonicalPath, Astro.site);
+const socialImage = new URL("/social-card.jpg", Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  name: "Tow Auto",
+  url: canonical.href,
+  image: socialImage.href,
+  telephone: "+995555000000",
+  areaServed: [
+    { "@type": "City", name: "Tbilisi" },
+    { "@type": "Country", name: "Georgia" },
+  ],
+  availableLanguage: ["ka", "en"],
+  description,
+};
+---
+
+<!doctype html>
+<html lang={locale} dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#15191d" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="ka" href={new URL("/", Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL("/en/", Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/", Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tow Auto" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
