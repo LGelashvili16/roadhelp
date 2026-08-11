@@ -4,8 +4,8 @@ import heroImage from "../assets/roadhelp-tbilisi-hero.png";
 import regionImage from "../assets/roadhelp-region.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "./SiteHeader.astro";
-import Logo from "./Logo.astro";
-import { contact, copy, localeOptions, type Locale } from "../content/site";
+import SiteFooter from "./SiteFooter.astro";
+import { contact, copy, type Locale } from "../content/site";
 
 interface Props {
   locale: Locale;
@@ -15,8 +15,8 @@ const { locale } = Astro.props;
 const t = copy[locale];
 ---
 
-<BaseLayout locale={locale} title={t.seo.title} description={t.seo.description}>
-  <SiteHeader locale={locale} />
+<BaseLayout locale={locale} page="home" title={t.seo.title} description={t.seo.description}>
+  <SiteHeader locale={locale} page="home" />
 
   <main>
     <section class="hero">
@@ -140,49 +140,5 @@ const t = copy[locale];
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-top">
-      <Logo href={t.path} label={t.nav.home} />
-      <div>
-        <p>{t.footer.area}</p>
-        <p>{t.footer.hours}</p>
-      </div>
-      <a href={`tel:${contact.phoneHref}`}>{contact.phoneDisplay}</a>
-    </div>
-    <div class="shell footer-bottom">
-      <p>© {new Date().getFullYear()} RoadHelp. {t.footer.rights}</p>
-      <nav class="footer-locales" aria-label={t.nav.languages}>
-        {localeOptions.map((option) => (
-          <a
-            href={option.path}
-            hreflang={option.code}
-            lang={option.code}
-            aria-current={option.code === locale ? "page" : undefined}
-          >
-            {option.shortLabel}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </footer>
-
-  <a class="mobile-call" href={`tel:${contact.phoneHref}`}>
-    <span>{t.nav.call}</span>
-    <strong>{contact.phoneDisplay}</strong>
-  </a>
-
-  <script is:inline>
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold: 0.14 }
-    );
-    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-  </script>
+  <SiteFooter locale={locale} page="home" />
 </BaseLayout>

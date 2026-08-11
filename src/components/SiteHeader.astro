@@ -1,23 +1,38 @@
 ---
 import Logo from "./Logo.astro";
-import type { Locale } from "../content/site";
-import { contact, copy, localeOptions } from "../content/site";
+import type { Locale, PageKey } from "../content/site";
+import {
+  contact,
+  copy,
+  getLocalizedPath,
+  localeOptions,
+} from "../content/site";
 
 interface Props {
   locale: Locale;
+  page: PageKey;
 }
 
-const { locale } = Astro.props;
+const { locale, page } = Astro.props;
 const t = copy[locale];
+const homePath = getLocalizedPath("home", locale);
+const sectionHref = (section: string) =>
+  page === "home" ? `#${section}` : `${homePath}#${section}`;
 ---
 
 <header class="site-header">
   <div class="shell nav-inner">
-    <Logo href={t.path} label={t.nav.home} />
+    <Logo href={homePath} label={t.nav.home} />
     <nav class="desktop-nav" aria-label={t.nav.primaryLabel}>
-      <a href="#services">{t.nav.services}</a>
-      <a href="#coverage">{t.nav.coverage}</a>
-      <a href="#process">{t.nav.process}</a>
+      <a
+        href={getLocalizedPath("about", locale)}
+        aria-current={page === "about" ? "page" : undefined}
+      >
+        {t.nav.about}
+      </a>
+      <a href={sectionHref("services")}>{t.nav.services}</a>
+      <a href={sectionHref("coverage")}>{t.nav.coverage}</a>
+      <a href={sectionHref("process")}>{t.nav.process}</a>
     </nav>
     <div class="nav-actions">
       <a class="button button-small" href={`tel:${contact.phoneHref}`}>
@@ -28,7 +43,7 @@ const t = copy[locale];
           <a
             class="locale-link"
             class:list={{ active: option.code === locale }}
-            href={option.path}
+            href={getLocalizedPath(page, option.code)}
             hreflang={option.code}
             lang={option.code}
             aria-current={option.code === locale ? "page" : undefined}
@@ -41,12 +56,18 @@ const t = copy[locale];
       <details class="mobile-menu">
         <summary>{t.nav.menu}</summary>
         <nav aria-label={t.nav.mobileLabel}>
-          <a href="#services">{t.nav.services}</a>
-          <a href="#coverage">{t.nav.coverage}</a>
-          <a href="#process">{t.nav.process}</a>
+          <a
+            href={getLocalizedPath("about", locale)}
+            aria-current={page === "about" ? "page" : undefined}
+          >
+            {t.nav.about}
+          </a>
+          <a href={sectionHref("services")}>{t.nav.services}</a>
+          <a href={sectionHref("coverage")}>{t.nav.coverage}</a>
+          <a href={sectionHref("process")}>{t.nav.process}</a>
           {localeOptions.map((option) => (
             <a
-              href={option.path}
+              href={getLocalizedPath(page, option.code)}
               hreflang={option.code}
               lang={option.code}
               aria-current={option.code === locale ? "page" : undefined}

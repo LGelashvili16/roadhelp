@@ -1,0 +1,50 @@
+---
+import Logo from "./Logo.astro";
+import {
+  contact,
+  copy,
+  getLocalizedPath,
+  localeOptions,
+  type Locale,
+  type PageKey,
+} from "../content/site";
+
+interface Props {
+  locale: Locale;
+  page: PageKey;
+}
+
+const { locale, page } = Astro.props;
+const t = copy[locale];
+---
+
+<footer class="site-footer">
+  <div class="shell footer-top">
+    <Logo href={getLocalizedPath("home", locale)} label={t.nav.home} />
+    <div>
+      <p>{t.footer.area}</p>
+      <p>{t.footer.hours}</p>
+    </div>
+    <a href={`tel:${contact.phoneHref}`}>{contact.phoneDisplay}</a>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© {new Date().getFullYear()} RoadHelp. {t.footer.rights}</p>
+    <nav class="footer-locales" aria-label={t.nav.languages}>
+      {localeOptions.map((option) => (
+        <a
+          href={getLocalizedPath(page, option.code)}
+          hreflang={option.code}
+          lang={option.code}
+          aria-current={option.code === locale ? "page" : undefined}
+        >
+          {option.shortLabel}
+        </a>
+      ))}
+    </nav>
+  </div>
+</footer>
+
+<a class="mobile-call" href={`tel:${contact.phoneHref}`}>
+  <span>{t.nav.call}</span>
+  <strong>{contact.phoneDisplay}</strong>
+</a>

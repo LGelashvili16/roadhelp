@@ -5,6 +5,23 @@ export const contact = {
 } as const;
 
 export type Locale = "ka" | "en" | "ru";
+export type PageKey = "home" | "about";
+
+export const routePaths: Record<PageKey, Record<Locale, string>> = {
+  home: {
+    ka: "/",
+    en: "/en/",
+    ru: "/ru/",
+  },
+  about: {
+    ka: "/about/",
+    en: "/en/about/",
+    ru: "/ru/about/",
+  },
+};
+
+export const getLocalizedPath = (page: PageKey, locale: Locale) =>
+  routePaths[page][locale];
 
 export const localeOptions: Array<{
   code: Locale;
@@ -12,9 +29,9 @@ export const localeOptions: Array<{
   shortLabel: string;
   path: string;
 }> = [
-  { code: "ka", label: "ქართული", shortLabel: "KA", path: "/" },
-  { code: "en", label: "English", shortLabel: "EN", path: "/en/" },
-  { code: "ru", label: "Русский", shortLabel: "RU", path: "/ru/" },
+  { code: "ka", label: "ქართული", shortLabel: "KA", path: routePaths.home.ka },
+  { code: "en", label: "English", shortLabel: "EN", path: routePaths.home.en },
+  { code: "ru", label: "Русский", shortLabel: "RU", path: routePaths.home.ru },
 ];
 
 type Copy = {
@@ -25,6 +42,7 @@ type Copy = {
     description: string;
   };
   nav: {
+    about: string;
     services: string;
     coverage: string;
     process: string;
@@ -95,6 +113,7 @@ export const copy: Record<Locale, Copy> = {
         "ავტომობილის უსაფრთხო ევაკუაცია და ტრანსპორტირება თბილისში, საქართველოს მასშტაბით და მეზობელ ქვეყნებში.",
     },
     nav: {
+      about: "ჩვენ შესახებ",
       services: "მომსახურება",
       coverage: "არეალი",
       process: "როგორ ვმუშაობთ",
@@ -203,6 +222,7 @@ export const copy: Record<Locale, Copy> = {
         "Safe vehicle evacuation and transport across Tbilisi, throughout Georgia, and to neighboring countries.",
     },
     nav: {
+      about: "About",
       services: "Services",
       coverage: "Coverage",
       process: "How it works",
@@ -309,6 +329,7 @@ export const copy: Record<Locale, Copy> = {
         "Безопасная эвакуация и перевозка автомобилей по Тбилиси, всей Грузии и в соседние страны.",
     },
     nav: {
+      about: "О сервисе",
       services: "Услуги",
       coverage: "География",
       process: "Как мы работаем",

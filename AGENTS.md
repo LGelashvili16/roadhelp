@@ -36,6 +36,8 @@ pnpm run preview
 
 - `src/pages/` contains thin locale route entry points.
 - `src/components/HomePage.astro` composes the homepage.
+- `src/components/AboutPage.astro` composes the localized About page.
+- `src/components/SiteFooter.astro` provides shared footer and mobile-call behavior.
 - `src/components/SiteHeader.astro` owns primary navigation and the locale switcher.
 - `src/layouts/BaseLayout.astro` owns global metadata, canonical links, language alternates, Open Graph tags, and JSON-LD.
 - `src/content/site.ts` contains contact details, locale definitions, and typed homepage copy.
@@ -56,19 +58,19 @@ Every public page and every navigation change must ship in Georgian, English, an
 - Use UTF-8 and preserve native Georgian and Cyrillic text.
 - Do not machine-transliterate Georgian or Russian text.
 
-## Planned pages
+## Public and planned pages
 
-The next planned pages are About, Contact, and Services. Prefer the plural `/services/` route.
+About is implemented. The next planned pages are Contact and Services. Prefer the plural `/services/` route.
 
 | Page | Georgian | English | Russian |
 | --- | --- | --- | --- |
-| About | `/about/` | `/en/about/` | `/ru/about/` |
+| About (implemented) | `/about/` | `/en/about/` | `/ru/about/` |
 | Contact | `/contact/` | `/en/contact/` | `/ru/contact/` |
 | Services | `/services/` | `/en/services/` | `/ru/services/` |
 
-Implement each as one shared component with thin locale route files, following the existing homepage pattern. Suggested component names are `AboutPage.astro`, `ContactPage.astro`, and `ServicesPage.astro`.
+Implement each remaining page as one shared component with thin locale route files, following the existing homepage and About-page patterns. Suggested component names are `ContactPage.astro` and `ServicesPage.astro`.
 
-Before adding these pages:
+The About implementation introduced the typed route map, page-aware header links, and page-aware metadata described below. Preserve and extend those patterns when adding the remaining pages:
 
 1. Introduce a typed route helper or route map that can return the equivalent path for a page and locale.
 2. Update `SiteHeader.astro` so page navigation works from every route; homepage section links must include the locale-aware homepage path when used outside the homepage.

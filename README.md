@@ -9,6 +9,7 @@ Georgian-first static marketing site for RoadHelp, a flatbed towing driver servi
 - Georgian at `/`
 - English at `/en/`
 - Russian at `/ru/`
+- Localized About pages at `/about/`, `/en/about/`, and `/ru/about/`
 - Responsive Astro image optimization
 - Local-business structured data, canonical URLs, hreflang, sitemap, and social metadata
 
@@ -34,4 +35,4 @@ The Cloudflare Pages build command is `pnpm run build` and the output directory 
 
 ## Generated imagery
 
-The hero and regional transport images were created with the built-in image generation workflow and are stored in `src/assets`.
+The hero, regional transport, and About-page truck images were created with the built-in image generation workflow and are stored in `src/assets`.

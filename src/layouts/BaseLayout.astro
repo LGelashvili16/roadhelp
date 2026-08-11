@@ -1,15 +1,22 @@
 ---
 import "../styles/global.css";
-import { localeOptions, type Locale } from "../content/site";
+import {
+  getLocalizedPath,
+  localeOptions,
+  type Locale,
+  type PageKey,
+} from "../content/site";
 
 interface Props {
   locale: Locale;
+  page: PageKey;
   title: string;
   description: string;
+  designContract?: string;
 }
 
-const { locale, title, description } = Astro.props;
-const canonicalPath = localeOptions.find((option) => option.code === locale)?.path ?? "/";
+const { locale, page, title, description, designContract } = Astro.props;
+const canonicalPath = getLocalizedPath(page, locale);
 const canonical = new URL(canonicalPath, Astro.site);
 const socialImage = new URL("/social-card.jpg", Astro.site);
 const openGraphLocales: Record<Locale, string> = {
@@ -44,9 +51,17 @@ const jsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {localeOptions.map((option) => (
-      <link rel="alternate" hreflang={option.code} href={new URL(option.path, Astro.site)} />
+      <link
+        rel="alternate"
+        hreflang={option.code}
+        href={new URL(getLocalizedPath(page, option.code), Astro.site)}
+      />
     ))}
-    <link rel="alternate" hreflang="x-default" href={new URL("/", Astro.site)} />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(getLocalizedPath(page, "ka"), Astro.site)}
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="RoadHelp" />
     <meta property="og:title" content={title} />
@@ -67,6 +82,7 @@ const jsonLd = {
     <title>{title}</title>
   </head>
   <body>
+    {designContract && <Fragment set:html={`<!-- ${designContract} -->`} />}
     <slot />
   </body>
 </html>
