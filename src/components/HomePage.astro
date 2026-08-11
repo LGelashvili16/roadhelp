@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "../assets/tow-auto-tbilisi-hero.png";
-import regionImage from "../assets/tow-auto-region.png";
+import heroImage from "../assets/roadhelp-tbilisi-hero.png";
+import regionImage from "../assets/roadhelp-region.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "./SiteHeader.astro";
 import Logo from "./Logo.astro";
@@ -150,7 +150,7 @@ const t = copy[locale];
       <a href={`tel:${contact.phoneHref}`}>{contact.phoneDisplay}</a>
     </div>
     <div class="shell footer-bottom">
-      <p>© {new Date().getFullYear()} Tow Auto. {t.footer.rights}</p>
+      <p>© {new Date().getFullYear()} RoadHelp. {t.footer.rights}</p>
       <nav class="footer-locales" aria-label={t.nav.languages}>
         {localeOptions.map((option) => (
           <a

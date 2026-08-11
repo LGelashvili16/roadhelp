@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://towauto.ge/sitemap-index.xml
+Sitemap: https://roadhelp.ge/sitemap-index.xml

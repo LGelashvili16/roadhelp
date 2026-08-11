@@ -90,7 +90,7 @@ export const copy: Record<Locale, Copy> = {
     lang: "ka",
     path: "/",
     seo: {
-      title: "Tow Auto | ევაკუატორი თბილისში და მთელ საქართველოში",
+      title: "RoadHelp | ევაკუატორი თბილისში და მთელ საქართველოში",
       description:
         "ავტომობილის უსაფრთხო ევაკუაცია და ტრანსპორტირება თბილისში, საქართველოს მასშტაბით და მეზობელ ქვეყნებში.",
     },
@@ -100,7 +100,7 @@ export const copy: Record<Locale, Copy> = {
       process: "როგორ ვმუშაობთ",
       call: "დარეკვა",
       menu: "მენიუ",
-      home: "Tow Auto-ს მთავარი გვერდი",
+      home: "RoadHelp-ის მთავარი გვერდი",
       primaryLabel: "მთავარი ნავიგაცია",
       mobileLabel: "მობილური ნავიგაცია",
       languages: "ენის არჩევა",
@@ -198,7 +198,7 @@ export const copy: Record<Locale, Copy> = {
     lang: "en",
     path: "/en/",
     seo: {
-      title: "Tow Auto | Flatbed towing in Tbilisi and Georgia",
+      title: "RoadHelp | Flatbed towing in Tbilisi and Georgia",
       description:
         "Safe vehicle evacuation and transport across Tbilisi, throughout Georgia, and to neighboring countries.",
     },
@@ -208,7 +208,7 @@ export const copy: Record<Locale, Copy> = {
       process: "How it works",
       call: "Call now",
       menu: "Menu",
-      home: "Tow Auto home",
+      home: "RoadHelp home",
       primaryLabel: "Primary navigation",
       mobileLabel: "Mobile navigation",
       languages: "Choose language",
@@ -304,7 +304,7 @@ export const copy: Record<Locale, Copy> = {
     lang: "ru",
     path: "/ru/",
     seo: {
-      title: "Tow Auto | Эвакуатор в Тбилиси и по всей Грузии",
+      title: "RoadHelp | Эвакуатор в Тбилиси и по всей Грузии",
       description:
         "Безопасная эвакуация и перевозка автомобилей по Тбилиси, всей Грузии и в соседние страны.",
     },
@@ -314,7 +314,7 @@ export const copy: Record<Locale, Copy> = {
       process: "Как мы работаем",
       call: "Позвонить",
       menu: "Меню",
-      home: "Главная страница Tow Auto",
+      home: "Главная страница RoadHelp",
       primaryLabel: "Основная навигация",
       mobileLabel: "Мобильная навигация",
       languages: "Выбор языка",

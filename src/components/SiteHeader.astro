@@ -20,6 +20,9 @@ const t = copy[locale];
       <a href="#process">{t.nav.process}</a>
     </nav>
     <div class="nav-actions">
+      <a class="button button-small" href={`tel:${contact.phoneHref}`}>
+        {t.nav.call}
+      </a>
       <nav class="locale-switcher" aria-label={t.nav.languages}>
         {localeOptions.map((option) => (
           <a
@@ -35,9 +38,6 @@ const t = copy[locale];
           </a>
         ))}
       </nav>
-      <a class="button button-small" href={`tel:${contact.phoneHref}`}>
-        {t.nav.call}
-      </a>
       <details class="mobile-menu">
         <summary>{t.nav.menu}</summary>
         <nav aria-label={t.nav.mobileLabel}>
