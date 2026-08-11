@@ -5,7 +5,7 @@ import regionImage from "../assets/tow-auto-region.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "./SiteHeader.astro";
 import Logo from "./Logo.astro";
-import { contact, copy, type Locale } from "../content/site";
+import { contact, copy, localeOptions, type Locale } from "../content/site";
 
 interface Props {
   locale: Locale;
@@ -23,7 +23,7 @@ const t = copy[locale];
       <Image
         class="hero-image"
         src={heroImage}
-        alt={locale === "ka" ? "ევაკუატორი ავტომობილით თბილისში" : "Flatbed tow truck carrying a car in Tbilisi"}
+        alt={t.media.heroAlt}
         widths={[768, 1200, 1800]}
         sizes="100vw"
         format="webp"
@@ -44,7 +44,7 @@ const t = copy[locale];
       </div>
     </section>
 
-    <section class="trust-strip" aria-label={locale === "ka" ? "მომსახურების უპირატესობები" : "Service benefits"}>
+    <section class="trust-strip" aria-label={t.media.trustLabel}>
       <div class="shell trust-grid">
         {t.trust.map((item) => <p>{item}</p>)}
       </div>
@@ -84,7 +84,7 @@ const t = copy[locale];
         <figure class="coverage-image reveal">
           <Image
             src={regionImage}
-            alt={locale === "ka" ? "ევაკუატორი საქართველოს მთის გზაზე" : "Flatbed tow truck on a Georgian mountain road"}
+            alt={t.media.regionAlt}
             widths={[640, 960, 1280]}
             sizes="(max-width: 767px) 100vw, 56vw"
             format="webp"
@@ -142,7 +142,7 @@ const t = copy[locale];
 
   <footer class="site-footer">
     <div class="shell footer-top">
-      <Logo />
+      <Logo href={t.path} label={t.nav.home} />
       <div>
         <p>{t.footer.area}</p>
         <p>{t.footer.hours}</p>
@@ -151,7 +151,18 @@ const t = copy[locale];
     </div>
     <div class="shell footer-bottom">
       <p>© {new Date().getFullYear()} Tow Auto. {t.footer.rights}</p>
-      <a href={locale === "ka" ? "/en/" : "/"}>{t.localeName}</a>
+      <nav class="footer-locales" aria-label={t.nav.languages}>
+        {localeOptions.map((option) => (
+          <a
+            href={option.path}
+            hreflang={option.code}
+            lang={option.code}
+            aria-current={option.code === locale ? "page" : undefined}
+          >
+            {option.shortLabel}
+          </a>
+        ))}
+      </nav>
     </div>
   </footer>
 

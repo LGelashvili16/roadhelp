@@ -4,10 +4,20 @@ export const contact = {
   whatsappHref: "https://wa.me/995555000000",
 } as const;
 
-export type Locale = "ka" | "en";
+export type Locale = "ka" | "en" | "ru";
+
+export const localeOptions: Array<{
+  code: Locale;
+  label: string;
+  shortLabel: string;
+  path: string;
+}> = [
+  { code: "ka", label: "ქართული", shortLabel: "KA", path: "/" },
+  { code: "en", label: "English", shortLabel: "EN", path: "/en/" },
+  { code: "ru", label: "Русский", shortLabel: "RU", path: "/ru/" },
+];
 
 type Copy = {
-  localeName: string;
   lang: string;
   path: string;
   seo: {
@@ -20,6 +30,10 @@ type Copy = {
     process: string;
     call: string;
     menu: string;
+    home: string;
+    primaryLabel: string;
+    mobileLabel: string;
+    languages: string;
   };
   hero: {
     eyebrow: string;
@@ -64,11 +78,15 @@ type Copy = {
     hours: string;
     rights: string;
   };
+  media: {
+    heroAlt: string;
+    regionAlt: string;
+    trustLabel: string;
+  };
 };
 
 export const copy: Record<Locale, Copy> = {
   ka: {
-    localeName: "English",
     lang: "ka",
     path: "/",
     seo: {
@@ -82,6 +100,10 @@ export const copy: Record<Locale, Copy> = {
       process: "როგორ ვმუშაობთ",
       call: "დარეკვა",
       menu: "მენიუ",
+      home: "Tow Auto-ს მთავარი გვერდი",
+      primaryLabel: "მთავარი ნავიგაცია",
+      mobileLabel: "მობილური ნავიგაცია",
+      languages: "ენის არჩევა",
     },
     hero: {
       eyebrow: "ევაკუატორი თბილისში",
@@ -166,9 +188,13 @@ export const copy: Record<Locale, Copy> = {
       hours: "გამოძახება შეთანხმებით",
       rights: "ყველა უფლება დაცულია.",
     },
+    media: {
+      heroAlt: "ევაკუატორი ავტომობილით თბილისში",
+      regionAlt: "ევაკუატორი საქართველოს მთის გზაზე",
+      trustLabel: "მომსახურების უპირატესობები",
+    },
   },
   en: {
-    localeName: "ქართული",
     lang: "en",
     path: "/en/",
     seo: {
@@ -182,6 +208,10 @@ export const copy: Record<Locale, Copy> = {
       process: "How it works",
       call: "Call now",
       menu: "Menu",
+      home: "Tow Auto home",
+      primaryLabel: "Primary navigation",
+      mobileLabel: "Mobile navigation",
+      languages: "Choose language",
     },
     hero: {
       eyebrow: "Flatbed towing in Tbilisi",
@@ -263,6 +293,117 @@ export const copy: Record<Locale, Copy> = {
       area: "Tbilisi, Georgia, and the region",
       hours: "Dispatch by arrangement",
       rights: "All rights reserved.",
+    },
+    media: {
+      heroAlt: "Flatbed tow truck carrying a car in Tbilisi",
+      regionAlt: "Flatbed tow truck on a Georgian mountain road",
+      trustLabel: "Service benefits",
+    },
+  },
+  ru: {
+    lang: "ru",
+    path: "/ru/",
+    seo: {
+      title: "Tow Auto | Эвакуатор в Тбилиси и по всей Грузии",
+      description:
+        "Безопасная эвакуация и перевозка автомобилей по Тбилиси, всей Грузии и в соседние страны.",
+    },
+    nav: {
+      services: "Услуги",
+      coverage: "География",
+      process: "Как мы работаем",
+      call: "Позвонить",
+      menu: "Меню",
+      home: "Главная страница Tow Auto",
+      primaryLabel: "Основная навигация",
+      mobileLabel: "Мобильная навигация",
+      languages: "Выбор языка",
+    },
+    hero: {
+      eyebrow: "Эвакуатор в Тбилиси",
+      title: "Ваш автомобиль. В надёжных руках.",
+      description:
+        "Эвакуация и перевозка автомобилей по Тбилиси, всей Грузии и в соседние страны.",
+      primary: "Позвонить сейчас",
+      secondary: "Смотреть услуги",
+    },
+    trust: [
+      "Полная погрузка на платформу",
+      "Надёжная фиксация",
+      "Грузия и соседние страны",
+    ],
+    intro: {
+      title: "Одна услуга. Любой маршрут.",
+      body:
+        "Перевезём повреждённый, неисправный или недавно приобретённый автомобиль точно по нужному адресу.",
+    },
+    services: [
+      {
+        number: "01",
+        title: "Эвакуация в Тбилиси",
+        body: "Заберём и перевезём автомобиль из любого района Тбилиси.",
+      },
+      {
+        number: "02",
+        title: "Перевозка по Грузии",
+        body: "Междугородняя перевозка автомобиля в любую точку Грузии.",
+      },
+      {
+        number: "03",
+        title: "Международная перевозка",
+        body:
+          "Перевозка автомобиля в соседние страны по предварительной договорённости.",
+      },
+    ],
+    coverage: {
+      title: "Из Тбилиси по всему региону",
+      body:
+        "От короткого городского вызова до дальнего маршрута: заранее планируем поездку и надёжно закрепляем автомобиль на платформе.",
+      places: ["Тбилиси", "Вся Грузия", "Соседние страны"],
+      note: "Международные маршруты согласовываются индивидуально.",
+    },
+    process: {
+      title: "Простой процесс от погрузки до доставки",
+      items: [
+        {
+          title: "Позвоните нам",
+          body: "Сообщите местоположение, модель автомобиля и пункт назначения.",
+        },
+        {
+          title: "Согласуем маршрут",
+          body: "Заранее уточним время, условия и детали перевозки.",
+        },
+        {
+          title: "Безопасно доставим",
+          body: "Погрузим, закрепим и доставим автомобиль в пункт назначения.",
+        },
+      ],
+    },
+    standards: {
+      title: "Бережно относимся к тому, что важно для вас.",
+      body:
+        "Платформа позволяет перевозить автомобиль без контакта колёс с дорогой. Это особенно важно для машин с низким клиренсом, повреждённых и дорогих автомобилей.",
+      items: [
+        "Все четыре колеса на платформе",
+        "Правильные точки крепления",
+        "Маршрут спланирован заранее",
+      ],
+    },
+    cta: {
+      title: "Нужен эвакуатор?",
+      body: "Позвоните нам и сообщите, где находится автомобиль.",
+      primary: "Позвонить",
+      secondary: "WhatsApp",
+    },
+    footer: {
+      area: "Тбилиси, Грузия и соседние страны",
+      hours: "Выезд по договорённости",
+      rights: "Все права защищены.",
+    },
+    media: {
+      heroAlt: "Эвакуатор перевозит автомобиль по Тбилиси",
+      regionAlt: "Эвакуатор на горной дороге в Грузии",
+      trustLabel: "Преимущества услуги",
     },
   },
 };

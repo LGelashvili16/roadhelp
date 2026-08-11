@@ -8,6 +8,7 @@ Georgian-first static marketing site for a flatbed towing driver serving Tbilisi
 - Static output for Cloudflare Pages
 - Georgian at `/`
 - English at `/en/`
+- Russian at `/ru/`
 - Responsive Astro image optimization
 - Local-business structured data, canonical URLs, hreflang, sitemap, and social metadata
 
