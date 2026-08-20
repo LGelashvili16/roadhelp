@@ -5,7 +5,7 @@ export const contact = {
 } as const;
 
 export type Locale = "ka" | "en" | "ru";
-export type PageKey = "home" | "about";
+export type PageKey = "home" | "about" | "contact";
 
 export const routePaths: Record<PageKey, Record<Locale, string>> = {
   home: {
@@ -18,6 +18,11 @@ export const routePaths: Record<PageKey, Record<Locale, string>> = {
     en: "/en/about/",
     ru: "/ru/about/",
   },
+  contact: {
+    ka: "/contact/",
+    en: "/en/contact/",
+    ru: "/ru/contact/",
+  },
 };
 
 export const getLocalizedPath = (page: PageKey, locale: Locale) =>
@@ -29,7 +34,7 @@ export const localeOptions: Array<{
   shortLabel: string;
   path: string;
 }> = [
-  { code: "ka", label: "ქართული", shortLabel: "KA", path: routePaths.home.ka },
+  { code: "ka", label: "ქართული", shortLabel: "GE", path: routePaths.home.ka },
   { code: "en", label: "English", shortLabel: "EN", path: routePaths.home.en },
   { code: "ru", label: "Русский", shortLabel: "RU", path: routePaths.home.ru },
 ];
@@ -44,8 +49,7 @@ type Copy = {
   nav: {
     about: string;
     services: string;
-    coverage: string;
-    process: string;
+    contact: string;
     call: string;
     menu: string;
     home: string;
@@ -115,8 +119,7 @@ export const copy: Record<Locale, Copy> = {
     nav: {
       about: "ჩვენ შესახებ",
       services: "მომსახურება",
-      coverage: "არეალი",
-      process: "როგორ ვმუშაობთ",
+      contact: "კონტაქტი",
       call: "დარეკვა",
       menu: "მენიუ",
       home: "RoadHelp-ის მთავარი გვერდი",
@@ -224,8 +227,7 @@ export const copy: Record<Locale, Copy> = {
     nav: {
       about: "About",
       services: "Services",
-      coverage: "Coverage",
-      process: "How it works",
+      contact: "Contact",
       call: "Call now",
       menu: "Menu",
       home: "RoadHelp home",
@@ -331,8 +333,7 @@ export const copy: Record<Locale, Copy> = {
     nav: {
       about: "О сервисе",
       services: "Услуги",
-      coverage: "География",
-      process: "Как мы работаем",
+      contact: "Контакты",
       call: "Позвонить",
       menu: "Меню",
       home: "Главная страница RoadHelp",

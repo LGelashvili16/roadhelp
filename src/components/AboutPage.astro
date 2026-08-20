@@ -52,15 +52,17 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
 
         <figure class="about-hero-media reveal">
-          <Image
-            src={aboutTruckImage}
-            alt={t.media.truckAlt}
-            widths={[720, 1080, 1536]}
-            sizes="(max-width: 900px) 100vw, 56vw"
-            format="webp"
-            loading="eager"
-            fetchpriority="high"
-          />
+          <div class="about-hero-frame">
+            <Image
+              src={aboutTruckImage}
+              alt={t.media.truckAlt}
+              widths={[720, 1080, 1536]}
+              sizes="(max-width: 900px) 100vw, 56vw"
+              format="webp"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
           <figcaption>{t.media.caption}</figcaption>
         </figure>
       </div>

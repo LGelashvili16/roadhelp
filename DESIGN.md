@@ -18,23 +18,24 @@ colors:
   daylight-muted: "#555b60"
   daylight-hairline: "rgba(27, 31, 34, 0.17)"
 typography:
+  mainHeadingMax: "48px"
   display:
     fontFamily: '"Noto Sans Georgian Variable", "Noto Sans Variable", "Segoe UI", Arial, sans-serif'
-    fontSize: "clamp(44px, 5.25vw, 78px)"
+    fontSize: "clamp(40px, 4vw, 48px)"
     fontWeight: 820
-    lineHeight: 0.99
+    lineHeight: 1.16
     letterSpacing: "-0.055em"
   headline:
     fontFamily: '"Noto Sans Georgian Variable", "Noto Sans Variable", "Segoe UI", Arial, sans-serif'
-    fontSize: "clamp(36px, 4vw, 58px)"
+    fontSize: "clamp(34px, 3.4vw, 48px)"
     fontWeight: 780
-    lineHeight: 1.06
+    lineHeight: 1.2
     letterSpacing: "-0.045em"
   title:
     fontFamily: '"Noto Sans Georgian Variable", "Noto Sans Variable", "Segoe UI", Arial, sans-serif'
     fontSize: "clamp(22px, 2.2vw, 31px)"
     fontWeight: 700
-    lineHeight: 1.2
+    lineHeight: 1.24
     letterSpacing: "-0.025em"
   body:
     fontFamily: '"Noto Sans Georgian Variable", "Noto Sans Variable", "Segoe UI", Arial, sans-serif'
@@ -99,7 +100,7 @@ components:
 
 RoadHelp should feel like a calm, capable transport operator presented through an industrial editorial lens. Graphite surfaces create the working environment; warm off-white type carries the information; orange behaves like a route marker, drawing attention to actions and operational detail. The design persuades with visible process and real vehicle photography, not corporate polish or unsupported proof.
 
-The shipped homepage and About page are the reference implementation. About extends the world with a split hero, an arrival image of the truck, hairline-separated handling rows, and a high-contrast orange coverage field. Density is spacious but purposeful: large headings establish confidence, then structured rows make the service easy to scan.
+The shipped homepage, About page, and Contact page are the reference implementation. About extends the world with a split hero and hairline-separated handling rows. Contact uses a call-first dispatch brief, a fully visible truck image, concise preparation rows, and a high-contrast orange coverage field. Density is spacious but purposeful: compact bold headings establish confidence, then structured rows make the service easy to scan.
 
 **Key Characteristics:**
 
@@ -138,15 +139,19 @@ The palette is mostly graphite and warm paper; route orange is deliberately rare
 
 **Display and body family:** Self-hosted Noto Sans Georgian Variable first, Noto Sans Variable second, then system sans fallbacks.
 
-**Character:** One variable family keeps all three languages visually equal. Heavy, tightly tracked display type feels engineered and direct; body text stays open and calm enough for practical service information.
+**Character:** One variable family keeps all three languages visually equal. Heavy, tightly tracked display type feels engineered and direct without overpowering the page; body text stays open and calm enough for practical service information.
 
 ### Hierarchy
 
-- **Display:** Hero statements only. Use the normative fluid display token, with very tight leading and tracking; allow locale-specific wrapping instead of shrinking one language independently.
-- **Headline:** Major section titles. Keep line lengths compact and pair with generous space.
+- **Display:** Hero statements only. Use the normative fluid display token with a strict 48px ceiling, compact but open leading for Georgian character clearance, and tight tracking; allow locale-specific wrapping instead of shrinking one language independently.
+- **Headline:** Major section titles. Keep line lengths compact, pair with generous space, and never exceed 48px.
 - **Title:** Row and process headings. Use strong weight and modest negative tracking.
 - **Body:** Explanatory copy. Default to the body token and keep readable measures near 580–650px on wide screens.
 - **Label:** Eyebrows, numbers, locales, and compact metadata. Heavy, tracked, and uppercase only where the content naturally supports it.
+
+**The 48px Ceiling Rule.** Every page-level `h1` and major section `h2` must compute to no more than 48px at every viewport. Keep this limit in the shared tokens rather than introducing larger page-specific overrides.
+
+**The About Detail Scale.** The About page's handling and coverage sections use a quieter hierarchy than hero and overview content: section headings cap at 40px, handling-row titles at 27px, and coverage place labels at 30px.
 
 **The One Family Rule.** Do not introduce a display serif, condensed font, icon font, or Latin-only brand face; Georgian and Cyrillic must remain first-class.
 
@@ -169,7 +174,7 @@ Responsive behavior is deliberate:
 
 The system is flat by default. Depth comes from alternating graphite tones, hairline boundaries, full-bleed orange, photo scrims, and the physical presence of imagery. Shadows are exceptional: the About hero image uses one deep photographic shadow, and the open mobile menu uses one compact overlay shadow. Do not shadow ordinary sections, rows, or buttons.
 
-Homepage photography fills the viewport under directional dark scrims so text remains legible while the truck stays visible. Supporting and About imagery uses rounded clipping, natural aspect ratios, `object-fit: cover`, intentional subject positioning, and localized captions/alt text. Keep image color natural; overlays establish hierarchy rather than decorative filters.
+Homepage photography fills the viewport under directional dark scrims so text remains legible while the truck stays visible. Supporting and About imagery uses rounded framing and natural aspect ratios by default; use `object-fit: contain` when the entire truck must remain visible and `cover` only when an intentional crop is explicitly approved. Keep image color natural; overlays establish hierarchy rather than decorative filters.
 
 **The Evidence First Rule.** Use real RoadHelp truck imagery to prove the service and process. Avoid generic towing stock, abstract transport illustrations, and decorative image collages.
 
@@ -192,6 +197,7 @@ The recurring surface/control radius is gently rounded, not pill-like. Smaller r
 - **Service and approach rows:** Use top/bottom hairlines, a small orange number or skewed marker, a strong title, muted body copy, and an optional compact call affordance.
 - **Process group:** A continuous three-column framed grid with 1px separators; a single soft-graphite middle panel may provide rhythm. Stack to one column on mobile.
 - **Coverage field:** A full orange section with dark text and hairline place rows. Keep it factual and restrained; it is a high-contrast information block, not a promotional banner.
+- **Contact brief:** Lead with the visible phone number and WhatsApp as the secondary action, then use three editorial rows for location, vehicle details, and destination. Do not add a static form without a working endpoint and complete states.
 
 ### Navigation and locale behavior
 
@@ -199,6 +205,7 @@ The recurring surface/control radius is gently rounded, not pill-like. Smaller r
 - Desktop navigation is compact and low-contrast at rest; hover and `aria-current="page"` restore full contrast.
 - Locale options must link to the equivalent current page, not always the homepage. The selected locale uses `aria-current="page"`.
 - From non-home pages, section navigation points to the locale-aware homepage plus the section anchor.
+- Primary navigation order is Services, Contact, About. Coverage and process remain homepage content rather than header links.
 - At mobile width, use the native `details`/`summary` menu and include all localized navigation and locale choices.
 
 ### Photography
@@ -206,6 +213,7 @@ The recurring surface/control radius is gently rounded, not pill-like. Smaller r
 - Use Astro-processed responsive images with meaningful localized alt text, explicit `widths`/`sizes`, and WebP output.
 - Hero evidence loads eagerly; supporting images load lazily.
 - The About hero image is a split-layout anchor with a narrow skewed orange edge marker, caption, and restrained arrival motion.
+- The Contact hero uses the regional truck image at its natural 4:3 ratio with a restrained offset orange frame.
 
 ### Motion
 

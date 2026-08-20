@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import regionImage from "../assets/roadhelp-region.png";
+import { contactCopy } from "../content/contact";
+import { contact, type Locale } from "../content/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = contactCopy[locale];
+const designContract = `
+THESIS: A call-first contact page built around the real RoadHelp truck and the minimum information needed to arrange transport.
+OWN-WORLD: RoadHelp graphite surfaces, warm type, orange route markers, editorial rows, and real flatbed photography.
+STORY: The visitor sees the number, chooses phone or WhatsApp, prepares three route details, and confirms the service area.
+FIRST VIEWPORT: The call information leads on the left while the truck remains fully visible on the right.
+FORM: Asymmetric dispatch brief, grounded candidate 7, motion 3, density 4.
+`.trim();
+---
+
+<BaseLayout
+  locale={locale}
+  page="contact"
+  title={t.seo.title}
+  description={t.seo.description}
+  designContract={designContract}
+>
+  <SiteHeader locale={locale} page="contact" />
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="shell contact-hero-grid">
+        <div class="contact-hero-copy reveal">
+          <p class="eyebrow">{t.hero.eyebrow}</p>
+          <h1>{t.hero.title}</h1>
+          <p>{t.hero.body}</p>
+
+          <div class="contact-hero-actions">
+            <a class="contact-phone" href={`tel:${contact.phoneHref}`}>
+              <span>{t.hero.callLabel}</span>
+              <strong>{contact.phoneDisplay}</strong>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button button-secondary"
+              href={contact.whatsappHref}
+              rel="noopener"
+            >
+              {t.hero.whatsapp}
+            </a>
+          </div>
+        </div>
+
+        <figure class="contact-hero-media reveal">
+          <Image
+            src={regionImage}
+            alt={t.media.truckAlt}
+            widths={[720, 1080, 1440]}
+            sizes="(max-width: 900px) 100vw, 55vw"
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section contact-brief">
+      <div class="shell contact-brief-grid">
+        <div class="contact-brief-heading reveal">
+          <h2>{t.details.title}</h2>
+          <p>{t.details.body}</p>
+        </div>
+
+        <div class="contact-detail-list reveal">
+          {t.details.items.map((item) => (
+            <article class="contact-detail-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+            </article>
+          ))}
+          <p class="contact-note">{t.details.note}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-coverage">
+      <div class="shell contact-coverage-grid">
+        <h2 class="reveal">{t.coverage.title}</h2>
+        <div class="contact-coverage-body reveal">
+          <p>{t.coverage.body}</p>
+          <div class="contact-place-list">
+            {t.coverage.places.map((place) => <span>{place}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter locale={locale} page="contact" />
+</BaseLayout>

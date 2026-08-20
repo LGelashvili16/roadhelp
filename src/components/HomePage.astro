@@ -37,7 +37,14 @@ const t = copy[locale];
           <h1>{t.hero.title}</h1>
           <p class="hero-description">{t.hero.description}</p>
           <div class="button-row">
-            <a class="button" href={`tel:${contact.phoneHref}`}>{t.hero.primary}</a>
+            <a
+              class="button hero-call"
+              href={`tel:${contact.phoneHref}`}
+              aria-label={`${t.hero.primary}: ${contact.phoneDisplay}`}
+            >
+              <span>{t.hero.primary}</span>
+              <strong>{contact.phoneDisplay}</strong>
+            </a>
             <a class="text-link" href="#services">{t.hero.secondary}<span aria-hidden="true">↘</span></a>
           </div>
         </div>

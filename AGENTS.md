@@ -37,10 +37,12 @@ pnpm run preview
 - `src/pages/` contains thin locale route entry points.
 - `src/components/HomePage.astro` composes the homepage.
 - `src/components/AboutPage.astro` composes the localized About page.
+- `src/components/ContactPage.astro` composes the localized Contact page.
 - `src/components/SiteFooter.astro` provides shared footer and mobile-call behavior.
 - `src/components/SiteHeader.astro` owns primary navigation and the locale switcher.
 - `src/layouts/BaseLayout.astro` owns global metadata, canonical links, language alternates, Open Graph tags, and JSON-LD.
 - `src/content/site.ts` contains contact details, locale definitions, and typed homepage copy.
+- `src/content/contact.ts` contains typed Georgian, English, and Russian Contact-page copy.
 - `src/styles/global.css` contains the shared visual system and responsive styles.
 - `src/assets/` contains images processed by Astro.
 - `public/` contains assets copied without processing, including Cloudflare headers, robots.txt, the favicon, and the social card.
@@ -60,17 +62,17 @@ Every public page and every navigation change must ship in Georgian, English, an
 
 ## Public and planned pages
 
-About is implemented. The next planned pages are Contact and Services. Prefer the plural `/services/` route.
+About and Contact are implemented. The next planned page is Services. Prefer the plural `/services/` route.
 
 | Page | Georgian | English | Russian |
 | --- | --- | --- | --- |
 | About (implemented) | `/about/` | `/en/about/` | `/ru/about/` |
-| Contact | `/contact/` | `/en/contact/` | `/ru/contact/` |
+| Contact (implemented) | `/contact/` | `/en/contact/` | `/ru/contact/` |
 | Services | `/services/` | `/en/services/` | `/ru/services/` |
 
-Implement each remaining page as one shared component with thin locale route files, following the existing homepage and About-page patterns. Suggested component names are `ContactPage.astro` and `ServicesPage.astro`.
+Implement Services as one shared component with thin locale route files, following the existing homepage, About-page, and Contact-page patterns. The suggested component name is `ServicesPage.astro`.
 
-The About implementation introduced the typed route map, page-aware header links, and page-aware metadata described below. Preserve and extend those patterns when adding the remaining pages:
+The About and Contact implementations use the typed route map, page-aware header links, and page-aware metadata described below. Preserve and extend those patterns when adding Services:
 
 1. Introduce a typed route helper or route map that can return the equivalent path for a page and locale.
 2. Update `SiteHeader.astro` so page navigation works from every route; homepage section links must include the locale-aware homepage path when used outside the homepage.
