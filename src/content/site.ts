@@ -1,7 +1,7 @@
 export const contact = {
-  phoneDisplay: "+995 555 00 00 00",
-  phoneHref: "+995555000000",
-  whatsappHref: "https://wa.me/995555000000",
+  phoneDisplay: "+995 574 04 25 50",
+  phoneHref: "+995574042550",
+  whatsappHref: "https://wa.me/995574042550",
 } as const;
 
 export type Locale = "ka" | "en" | "ru";
