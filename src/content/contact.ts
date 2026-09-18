@@ -65,7 +65,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
       note: "დრო, პირობები და საერთაშორისო მარშრუტები თანხმდება ტრანსპორტირების დაწყებამდე.",
     },
     coverage: {
-      title: "ნებისმისერი მიმართულება.",
+      title: "ნებისმიერი მიმართულება.",
       body: "RoadHelp ემსახურება საქალაქო, საქალაქთაშორისო და წინასწარ შეთანხმებულ საერთაშორისო მარშრუტებს.",
       places: ["თბილისი", "მთელი საქართველო", "მეზობელი ქვეყნები"],
     },
@@ -82,13 +82,13 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     hero: {
       eyebrow: "Contact RoadHelp",
       title: "Where is the vehicle?",
-      body: "Call or message us on WhatsApp with the pickup point, vehicle details, and destination.",
+      body: "Call us or message us on WhatsApp and share the main details of the route.",
       callLabel: "Call now",
       whatsapp: "WhatsApp",
     },
     details: {
       title: "What we need to know",
-      body: "Three details help us confirm the route and transport conditions before the journey.",
+      body: "During the call, three details help us clarify the route and transport conditions.",
       items: [
         {
           title: "Vehicle location",
@@ -106,8 +106,8 @@ export const contactCopy: Record<Locale, ContactCopy> = {
       note: "Timing, conditions, and cross-border routes are agreed before transport begins.",
     },
     coverage: {
-      title: "One number. Three transport scopes.",
-      body: "RoadHelp handles city, intercity, and pre-arranged cross-border vehicle transport.",
+      title: "Any direction.",
+      body: "RoadHelp serves city, intercity, and pre-arranged international routes.",
       places: ["Tbilisi", "All of Georgia", "Neighboring countries"],
     },
     media: {
@@ -124,13 +124,13 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     hero: {
       eyebrow: "Связаться с RoadHelp",
       title: "Где находится автомобиль?",
-      body: "Позвоните или напишите в WhatsApp, указав место погрузки, данные автомобиля и пункт назначения.",
+      body: "Позвоните или напишите нам в WhatsApp и сообщите основные детали маршрута.",
       callLabel: "Позвонить",
       whatsapp: "WhatsApp",
     },
     details: {
       title: "Что нужно сообщить",
-      body: "Три детали помогут заранее согласовать маршрут и условия перевозки.",
+      body: "Во время разговора три детали помогут уточнить маршрут и условия перевозки.",
       items: [
         {
           title: "Местоположение автомобиля",
@@ -148,8 +148,8 @@ export const contactCopy: Record<Locale, ContactCopy> = {
       note: "Время, условия и международные маршруты согласовываются до начала перевозки.",
     },
     coverage: {
-      title: "Один номер. Три направления.",
-      body: "RoadHelp выполняет городские, междугородние и заранее согласованные международные перевозки автомобилей.",
+      title: "Любое направление.",
+      body: "RoadHelp обслуживает городские, междугородние и заранее согласованные международные маршруты.",
       places: ["Тбилиси", "Вся Грузия", "Соседние страны"],
     },
     media: {

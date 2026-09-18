@@ -229,67 +229,66 @@ export const copy: Record<Locale, Copy> = {
       languages: "Choose language",
     },
     hero: {
-      eyebrow: "Flatbed towing in Tbilisi",
-      title: "Your car. Safely delivered.",
-      description:
-        "Vehicle recovery and transport across Tbilisi, Georgia, and neighboring countries.",
-      primary: "Call now",
+      eyebrow: "Tow truck service",
+      title: "Safe transport for your vehicle",
+      description: "Transport in Tbilisi, throughout Georgia, and abroad",
+      primary: "Call",
       secondary: "View services",
     },
     trust: [
-      "Full flatbed transport",
-      "Careful securement",
+      "Loaded onto the flatbed",
+      "Securely fastened",
       "Georgia and the region",
     ],
     intro: {
-      title: "One service. Any route.",
+      title: "Any route",
       body: "We move damaged, non-running, or newly purchased vehicles exactly where they need to go.",
     },
     services: [
       {
         number: "01",
-        title: "Towing in Tbilisi",
-        body: "Vehicle pickup and transport across every district of Tbilisi.",
+        title: "Transport in Tbilisi",
+        body: "Vehicle transport to any district of Tbilisi.",
       },
       {
         number: "02",
-        title: "Transport across Georgia",
+        title: "Transport in Georgia",
         body: "Intercity vehicle transport to destinations throughout Georgia.",
       },
       {
         number: "03",
-        title: "Cross-border transport",
+        title: "International transport",
         body: "Vehicle transport to neighboring countries by prior arrangement.",
       },
     ],
     coverage: {
-      title: "From Tbilisi across the region",
-      body: "From a short city pickup to a long-distance route, every move is planned and every vehicle is secured on the flatbed.",
+      title: "Tbilisi and every region",
+      body: "Whether it is a short city callout or a long route, we plan the journey in advance and secure the vehicle safely on the flatbed.",
       places: ["Tbilisi", "All of Georgia", "Neighboring countries"],
       note: "Cross-border routes are arranged individually.",
     },
     process: {
-      title: "Simple from pickup to delivery",
+      title: "A simple process, from start to finish",
       items: [
         {
-          title: "Call us",
-          body: "Share your location, vehicle model, and destination.",
+          title: "You call us",
+          body: "You share the location, vehicle model, and destination.",
         },
         {
-          title: "Confirm the route",
-          body: "We agree on timing, conditions, and transport details.",
+          title: "We agree on the route",
+          body: "We clarify the conditions, timing, and transport details in advance.",
         },
         {
-          title: "Move safely",
-          body: "We load, secure, and deliver your vehicle to its destination.",
+          title: "We transport it safely",
+          body: "We load the vehicle onto the flatbed, secure it, and take it to the destination.",
         },
       ],
     },
     standards: {
       title: "We take care of what matters to you.",
-      body: "A flatbed keeps every wheel off the road. It is the careful choice for low-clearance, damaged, and valuable vehicles.",
+      body: "Our flatbed truck transports the vehicle without its wheels touching the road surface. This is especially important for low-clearance, damaged, and valuable vehicles.",
       items: [
-        "All four wheels on the bed",
+        "Reliability",
         "Correct securement points",
         "Route planned in advance",
       ],
@@ -302,7 +301,7 @@ export const copy: Record<Locale, Copy> = {
     },
     footer: {
       area: "Tbilisi, Georgia, and the region",
-      hours: "Dispatch by arrangement",
+      hours: "Service by arrangement",
       rights: "All rights reserved.",
     },
     media: {
@@ -331,31 +330,30 @@ export const copy: Record<Locale, Copy> = {
       languages: "Выбор языка",
     },
     hero: {
-      eyebrow: "Эвакуатор в Тбилиси",
-      title: "Ваш автомобиль. В надёжных руках.",
-      description:
-        "Эвакуация и перевозка автомобилей по Тбилиси, всей Грузии и в соседние страны.",
-      primary: "Позвонить сейчас",
+      eyebrow: "Эвакуатор",
+      title: "Безопасная перевозка вашего автомобиля",
+      description: "Перевозка по Тбилиси, всей Грузии и за границу",
+      primary: "Позвонить",
       secondary: "Смотреть услуги",
     },
     trust: [
-      "Полная погрузка на платформу",
-      "Надёжная фиксация",
-      "Грузия и соседние страны",
+      "Размещение на платформе",
+      "Надёжное крепление",
+      "Грузия и регион",
     ],
     intro: {
-      title: "Одна услуга. Любой маршрут.",
+      title: "Любой маршрут",
       body: "Перевезём повреждённый, неисправный или недавно приобретённый автомобиль точно по нужному адресу.",
     },
     services: [
       {
         number: "01",
-        title: "Эвакуация в Тбилиси",
-        body: "Заберём и перевезём автомобиль из любого района Тбилиси.",
+        title: "Перевозка по Тбилиси",
+        body: "Перевозка автомобиля в любой район Тбилиси.",
       },
       {
         number: "02",
-        title: "Перевозка по Грузии",
+        title: "Перевозка в Грузии",
         body: "Междугородняя перевозка автомобиля в любую точку Грузии.",
       },
       {
@@ -365,33 +363,33 @@ export const copy: Record<Locale, Copy> = {
       },
     ],
     coverage: {
-      title: "Из Тбилиси по всему региону",
-      body: "От короткого городского вызова до дальнего маршрута: заранее планируем поездку и надёжно закрепляем автомобиль на платформе.",
+      title: "Тбилиси и все регионы",
+      body: "Будь то короткий городской вызов или дальний маршрут, мы заранее планируем поездку и надёжно закрепляем автомобиль на платформе.",
       places: ["Тбилиси", "Вся Грузия", "Соседние страны"],
       note: "Международные маршруты согласовываются индивидуально.",
     },
     process: {
-      title: "Простой процесс от погрузки до доставки",
+      title: "Простой процесс от начала до конца",
       items: [
         {
-          title: "Позвоните нам",
-          body: "Сообщите местоположение, модель автомобиля и пункт назначения.",
+          title: "Вы звоните нам",
+          body: "Вы сообщаете местоположение, модель автомобиля и пункт назначения.",
         },
         {
           title: "Согласуем маршрут",
-          body: "Заранее уточним время, условия и детали перевозки.",
+          body: "Заранее уточняем условия, время и детали перевозки.",
         },
         {
-          title: "Безопасно доставим",
-          body: "Погрузим, закрепим и доставим автомобиль в пункт назначения.",
+          title: "Безопасно перевозим",
+          body: "Погружаем автомобиль на платформу, закрепляем и доставляем до пункта назначения.",
         },
       ],
     },
     standards: {
       title: "Бережно относимся к тому, что важно для вас.",
-      body: "Платформа позволяет перевозить автомобиль без контакта колёс с дорогой. Это особенно важно для машин с низким клиренсом, повреждённых и дорогих автомобилей.",
+      body: "Наш эвакуатор на платформе перевозит автомобиль без контакта колёс с дорожным покрытием. Это особенно важно для машин с низким клиренсом, повреждённых и дорогих автомобилей.",
       items: [
-        "Все четыре колеса на платформе",
+        "Надёжность",
         "Правильные точки крепления",
         "Маршрут спланирован заранее",
       ],
@@ -403,7 +401,7 @@ export const copy: Record<Locale, Copy> = {
       secondary: "WhatsApp",
     },
     footer: {
-      area: "Тбилиси, Грузия и соседние страны",
+      area: "Тбилиси, Грузия и регион",
       hours: "Выезд по договорённости",
       rights: "Все права защищены.",
     },

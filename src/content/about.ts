@@ -102,15 +102,15 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
         "Learn how RoadHelp transports vehicles by flatbed in Tbilisi, across Georgia, and to neighboring countries by prior arrangement.",
     },
     hero: {
-      title: "Vehicle transport, planned from pickup to delivery.",
-      body: "RoadHelp provides vehicle recovery and transport in Tbilisi, throughout Georgia, and to neighboring countries by prior arrangement.",
+      title: "Vehicle transport",
+      body: "RoadHelp provides vehicle transport in Tbilisi, throughout Georgia, and, by prior arrangement, to neighboring countries.",
       primary: "Call now",
       secondary: "View services",
     },
     overview: {
-      title: "One driver. One focused job.",
+      title: "One specific job.",
       paragraphs: [
-        "RoadHelp is operated by one driver, from collecting the vehicle and placing it on the flatbed through delivery to the agreed destination. The route may be a short city journey or a trip across Georgia.",
+        "RoadHelp is operated by one driver: from collecting the vehicle and placing it on the flatbed through transport to the agreed address. The route may be a short city journey or a trip across Georgia.",
         "On a flatbed, all four wheels remain off the road. This approach suits damaged, non-running, low-clearance, valuable, and newly purchased vehicles.",
       ],
     },
@@ -132,8 +132,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       ],
     },
     coverage: {
-      title: "From Tbilisi to the agreed destination.",
-      body: "RoadHelp brings city recovery and long-distance vehicle transport together in one focused service.",
+      title: "Transport wherever you want to go",
+      body: "RoadHelp combines city and intercity vehicle transport in one service.",
       places: ["Tbilisi", "All of Georgia", "Neighboring countries"],
       note: "Cross-border routes and conditions are arranged individually.",
     },
@@ -156,15 +156,15 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
         "Узнайте, как RoadHelp перевозит автомобили на платформе по Тбилиси, всей Грузии и в соседние страны по предварительной договорённости.",
     },
     hero: {
-      title: "Перевозка автомобиля, спланированная от погрузки до доставки.",
-      body: "RoadHelp выполняет эвакуацию и перевозку автомобилей по Тбилиси, всей Грузии и в соседние страны по предварительной договорённости.",
+      title: "Перевозка автомобиля",
+      body: "RoadHelp выполняет перевозку автомобилей по Тбилиси, всей Грузии и, по предварительной договорённости, в соседние страны.",
       primary: "Позвонить",
       secondary: "Смотреть услуги",
     },
     overview: {
-      title: "Один водитель. Одна конкретная задача.",
+      title: "Одна конкретная задача.",
       paragraphs: [
-        "RoadHelp — сервис одного водителя: от погрузки автомобиля на платформу до перевозки по согласованному адресу. Это может быть короткий городской маршрут или поездка по Грузии.",
+        "Услугу RoadHelp выполняет один водитель: от забора автомобиля и размещения на платформе до перевозки по согласованному адресу. Это может быть короткий городской маршрут или поездка по Грузии.",
         "На платформе все четыре колеса автомобиля не соприкасаются с дорогой. Такой способ подходит для повреждённых, неисправных, низких, дорогих и недавно приобретённых автомобилей.",
       ],
     },
@@ -186,8 +186,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       ],
     },
     coverage: {
-      title: "Из Тбилиси — до согласованного пункта.",
-      body: "RoadHelp объединяет городскую эвакуацию и междугороднюю перевозку автомобилей в одном сервисе.",
+      title: "Перевозка туда, куда вам нужно",
+      body: "RoadHelp объединяет городскую и междугороднюю перевозку автомобилей в одном сервисе.",
       places: ["Тбилиси", "Вся Грузия", "Соседние страны"],
       note: "Международные маршруты и условия согласовываются индивидуально.",
     },
