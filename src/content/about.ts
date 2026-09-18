@@ -48,17 +48,16 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
         "გაიგეთ, როგორ გადააქვს RoadHelp-ს ავტომობილები flatbed ბაქნით თბილისში, საქართველოს მასშტაბით და მეზობელ ქვეყნებში წინასწარი შეთანხმებით.",
     },
     hero: {
-      title: "ავტომობილის გადაყვანა, დაგეგმილი თავიდან ბოლომდე.",
-      body:
-        "RoadHelp ემსახურება ავტომობილების ევაკუაციასა და ტრანსპორტირებას თბილისში, საქართველოს მასშტაბით და, წინასწარი შეთანხმებით, მეზობელ ქვეყნებში.",
+      title: "ავტომობილის გადაყვანა",
+      body: "RoadHelp ემსახურება ავტომობილების ტრანსპორტირებას თბილისში, საქართველოს მასშტაბით და, წინასწარი შეთანხმებით, მეზობელ ქვეყნებში.",
       primary: "დარეკვა",
       secondary: "მომსახურების ნახვა",
     },
     overview: {
-      title: "ერთი მძღოლი. ერთი კონკრეტული საქმე.",
+      title: "ერთი კონკრეტული საქმე.",
       paragraphs: [
-        "RoadHelp-ის სერვისს ერთი მძღოლი ასრულებს — ავტომობილის აყვანიდან, ბაქანზე განთავსებიდან და შეთანხმებულ მისამართამდე ტრანსპორტირებამდე. მარშრუტი შეიძლება იყოს მოკლე საქალაქო გზა ან გადაადგილება საქართველოს მასშტაბით.",
-        "Flatbed ბაქანზე ავტომობილის ოთხივე ბორბალი გზის ზედაპირისგან თავისუფალია. ეს მიდგომა გამოსადეგია დაზიანებული, გაუმართავი, დაბალი კლირენსის, ძვირფასი ან ახლად შეძენილი ავტომობილის გადასაყვანად.",
+        "RoadHelp-ის სერვისს ერთი მძღოლი ასრულებს. ავტომობილის აყვანიდან, სატვირთო ძარაზე განთავსებიდან და შეთანხმებულ მისამართამდე ტრანსპორტირებამდე. მარშრუტი შეიძლება იყოს მოკლე საქალაქო გზა ან გადაადგილება საქართველოს მასშტაბით.",
+        "სატვირთო ძარაზე ავტომობილის ოთხივე ბორბალი გზის ზედაპირისგან თავისუფალია. ეს მიდგომა გამოსადეგია დაზიანებული, გაუმართავი, დაბალი კლირენსის, ძვირფასი ან ახლად შეძენილი ავტომობილის გადასაყვანად.",
       ],
     },
     approach: {
@@ -69,8 +68,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
           body: "წინასწარ ზუსტდება ავტომობილის მდებარეობა, მოდელი და დანიშნულების ადგილი.",
         },
         {
-          title: "ბაქანზე განთავსება",
-          body: "ავტომობილი სრულად თავსდება flatbed ბაქანზე და მაგრდება შესაბამის წერტილებში.",
+          title: "სატვირთო ძარაზე განთავსება",
+          body: "ავტომობილი სრულად თავსდება სატვირთო ძარაზე და მაგრდება შესაბამის წერტილებში.",
         },
         {
           title: "მარშრუტის დაგეგმვა",
@@ -79,9 +78,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       ],
     },
     coverage: {
-      title: "თბილისიდან — იქ, სადაც შეთანხმდებით.",
-      body:
-        "RoadHelp აერთიანებს საქალაქო ევაკუაციასა და საქალაქთაშორისო ტრანსპორტირებას ერთ სერვისში.",
+      title: "ტრანსპორტირება სადაც თქვენ გსურთ",
+      body: "RoadHelp აერთიანებს საქალაქო და საქალაქთაშორისო ტრანსპორტირებას ერთ სერვისში.",
       places: ["თბილისი", "მთელი საქართველო", "მეზობელი ქვეყნები"],
       note: "საერთაშორისო მარშრუტები და პირობები შეთანხმდება ინდივიდუალურად.",
     },
@@ -92,7 +90,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       secondary: "WhatsApp",
     },
     media: {
-      truckAlt: "RoadHelp-ის flatbed ევაკუატორი ავტომობილით საქართველოს მთის გზაზე",
+      truckAlt:
+        "RoadHelp-ის flatbed ევაკუატორი ავტომობილით საქართველოს მთის გზაზე",
       caption: "ავტომობილის ტრანსპორტირება საქართველოს მასშტაბით",
     },
   },
@@ -104,8 +103,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     },
     hero: {
       title: "Vehicle transport, planned from pickup to delivery.",
-      body:
-        "RoadHelp provides vehicle recovery and transport in Tbilisi, throughout Georgia, and to neighboring countries by prior arrangement.",
+      body: "RoadHelp provides vehicle recovery and transport in Tbilisi, throughout Georgia, and to neighboring countries by prior arrangement.",
       primary: "Call now",
       secondary: "View services",
     },
@@ -135,8 +133,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     },
     coverage: {
       title: "From Tbilisi to the agreed destination.",
-      body:
-        "RoadHelp brings city recovery and long-distance vehicle transport together in one focused service.",
+      body: "RoadHelp brings city recovery and long-distance vehicle transport together in one focused service.",
       places: ["Tbilisi", "All of Georgia", "Neighboring countries"],
       note: "Cross-border routes and conditions are arranged individually.",
     },
@@ -147,7 +144,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       secondary: "WhatsApp",
     },
     media: {
-      truckAlt: "RoadHelp flatbed tow truck carrying a car on a Georgian mountain road",
+      truckAlt:
+        "RoadHelp flatbed tow truck carrying a car on a Georgian mountain road",
       caption: "Vehicle transport across Georgia",
     },
   },
@@ -159,8 +157,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     },
     hero: {
       title: "Перевозка автомобиля, спланированная от погрузки до доставки.",
-      body:
-        "RoadHelp выполняет эвакуацию и перевозку автомобилей по Тбилиси, всей Грузии и в соседние страны по предварительной договорённости.",
+      body: "RoadHelp выполняет эвакуацию и перевозку автомобилей по Тбилиси, всей Грузии и в соседние страны по предварительной договорённости.",
       primary: "Позвонить",
       secondary: "Смотреть услуги",
     },
@@ -190,8 +187,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     },
     coverage: {
       title: "Из Тбилиси — до согласованного пункта.",
-      body:
-        "RoadHelp объединяет городскую эвакуацию и междугороднюю перевозку автомобилей в одном сервисе.",
+      body: "RoadHelp объединяет городскую эвакуацию и междугороднюю перевозку автомобилей в одном сервисе.",
       places: ["Тбилиси", "Вся Грузия", "Соседние страны"],
       note: "Международные маршруты и условия согласовываются индивидуально.",
     },
@@ -202,7 +198,8 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       secondary: "WhatsApp",
     },
     media: {
-      truckAlt: "Эвакуатор RoadHelp перевозит автомобиль по горной дороге в Грузии",
+      truckAlt:
+        "Эвакуатор RoadHelp перевозит автомобиль по горной дороге в Грузии",
       caption: "Перевозка автомобилей по всей Грузии",
     },
   },
